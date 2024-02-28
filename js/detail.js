@@ -30,16 +30,58 @@ let html = `
   <div class="detail-content">
     <h3 class="detail-title">${item.name}</h3>
     <p class="detail-author">Tác giả: <a href="">${item.author}</a></p>
-    <button class="read" onclick="location.href='./read.html?description=${item.description}'"
-    >Đọc truyện</button>
+    <p class="detail-view">Luợt xem: <span>${item.view}</span></p>
+
+    <button class="read" onclick="location.href='./read.html?description=${item.descriptionURL}'">Đọc truyện</button>
+
+
+    <div class="rate">
+            <a>
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+              <p>Ủng hộ</p>
+            </a>
+            <a>
+              <i class="fa-solid fa-star"></i>
+              <p>Đánh giá</p>
+            </a>
+            <a>
+              <i class="fa-solid fa-calendar-check"></i>
+              <p>Đề cử</p>
+            </a>
+    </div>
+
+
+ 
+
+
   </div>
 </div>
 <div class="detail-bottom">
-  <h2>Mô tả truyện</h2>
+  <ul>
+    <li class="desc dont-need"><a>GIỚI THIỆU</a></li>
+    <li class="list-chapter-1 need" onclick="hamNone()"><a>DANH SÁCH CHƯƠNG</a>
+    </li>
+    <li class="cmt need"><a>BÌNH LUẬN</a></li>
+  </ul>
+
+    <ul id="list-chapter">
+        <li><a href="">Chương 1</a></li>
+        <li><a href="">Chương 2</a></li>
+        <li><a href="">Chương 3</a></li>
+        <li><a href="">Chương 4</a></li>
+    </ul>
+
+
+
+
   <h3>${item.name}</h3>
-  <iframe scroll="no" overflow="hidden" class="detail-image" scrolling="no"
-      src="${item.description}"
-      width="100%" height="1000px" allow="autoplay" title=overflow="hidden"></iframe>
+
+  <div class="iframe"> 
+    <iframe scroll="no" overflow="hidden" class="detail-image" scrolling="no"
+        src="${item.description}"
+        width="100%" height="1000px" allow="autoplay" title=overflow="hidden"></iframe>
+  </div>
+  
 </div>
 
 `;
